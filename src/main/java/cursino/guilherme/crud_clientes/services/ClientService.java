@@ -2,6 +2,7 @@ package cursino.guilherme.crud_clientes.services;
 
 import cursino.guilherme.crud_clientes.dto.ClientDTO;
 import cursino.guilherme.crud_clientes.entities.Client;
+import cursino.guilherme.crud_clientes.mapping.ClientMapper;
 import cursino.guilherme.crud_clientes.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,10 +14,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class ClientService {
 
     private final ClientRepository repository;
+    private final ClientMapper mapper;
 
     @Autowired
-    public ClientService(ClientRepository repository) {
+    public ClientService(ClientRepository repository, ClientMapper mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
 
     @Transactional(readOnly = true)
@@ -33,14 +36,14 @@ public class ClientService {
 
     @Transactional
     public ClientDTO insert(ClientDTO clientDTO) {
-        Client client = new Client(
-                clientDTO.getId(),
-                clientDTO.getName(),
-                clientDTO.getCpf(),
-                clientDTO.getIncome(),
-                clientDTO.getBirthDate(),
-                clientDTO.getChildren()
-        );
-        return new ClientDTO(repository.save(client));
+        Client client = mapper.toClientEntity(clientDTO);
+        return mapper.toClientDTO(repository.save(client));
+    }
+
+    @Transactional
+    public ClientDTO update(Long id, ClientDTO clientDTO) {
+        Client existentClient = repository.getReferenceById(id);
+        Client updatedClient = mapper.updateClientFromDTO(clientDTO, existentClient);
+        return mapper.toClientDTO(repository.save(updatedClient));
     }
 }
