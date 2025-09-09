@@ -24,14 +24,14 @@ public class ClientService {
 
     @Transactional(readOnly = true)
     public ClientDTO findById(Long id) {
-        Client client = repository.findById(id).get();
-        return new ClientDTO(client);
+        Client client = repository.findById(id).orElseThrow();
+        return mapper.toClientDTO(client);
     }
 
     @Transactional(readOnly = true)
     public Page<ClientDTO> findAll(Pageable pageable) {
         Page<Client> clients = repository.findAll(pageable);
-        return clients.map(x -> new ClientDTO(x));
+        return clients.map(x -> mapper.toClientDTO(x));
     }
 
     @Transactional
