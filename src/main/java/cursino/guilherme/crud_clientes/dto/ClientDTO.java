@@ -11,7 +11,7 @@ public class ClientDTO {
     private final Long id;
     @NotBlank(message = "Nome é um campo obrigatório")
     private final String name;
-    @NotBlank
+    @NotBlank(message = "CPF é um campo obrigatório")
     private final String cpf;
     @PositiveOrZero
     private final Double income;

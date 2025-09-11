@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "tb_client")
+@Table(name = "TB_CLIENT")
 public class Client {
 
     @Id
@@ -15,6 +15,7 @@ public class Client {
     @Column(unique = true)
     private String cpf;
     private Double income;
+    @Column(columnDefinition = "DATE")
     private LocalDate birthDate;
     private Integer children;
 
