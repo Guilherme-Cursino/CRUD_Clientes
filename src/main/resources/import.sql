@@ -1,4 +1,4 @@
-    INSERT INTO TB_CLIENT (NAME, CPF, INCOME, BIRTH_DATE, CHILDREN)
+INSERT INTO tb_client (name, cpf, income, birthdate, children)
 VALUES ('Ada', '402.080.180-00', 4754.20, DATE '2002-04-21', 2),
        ('Alan', '187.388.290-45', 8370.20, DATE '2007-02-22', 1),
        ('Grace', '970.910.070-00', 15225.50, DATE '2001-07-14', 0),

@@ -8,24 +8,26 @@ import java.time.LocalDate;
 
 public class ClientDTO {
 
-    private final Long id;
+    private Long id;
     @NotBlank(message = "Nome é um campo obrigatório")
-    private final String name;
+    private String name;
     @NotBlank(message = "CPF é um campo obrigatório")
-    private final String cpf;
+    private String cpf;
     @PositiveOrZero
-    private final Double income;
+    private Double income;
     @PastOrPresent(message = "A data de nascimento não pode ser uma data futura")
-    private final LocalDate birthDate;
+    private LocalDate birthdate;
     @PositiveOrZero
-    private final Integer children;
+    private Integer children;
 
-    public ClientDTO(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
+    public ClientDTO() {}
+
+    public ClientDTO(Long id, String name, String cpf, Double income, LocalDate birthdate, Integer children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.income = income;
-        this.birthDate = birthDate;
+        this.birthdate = birthdate;
         this.children = children;
     }
 
@@ -33,23 +35,47 @@ public class ClientDTO {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCpf() {
         return cpf;
     }
 
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public Double getIncome() {
         return income;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public void setIncome(Double income) {
+        this.income = income;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
     }
 
     public Integer getChildren() {
         return children;
+    }
+
+    public void setChildren(Integer children) {
+        this.children = children;
     }
 }
