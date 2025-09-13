@@ -7,10 +7,8 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
 
-    @Mapping(source = "dto.birthdate", target = "birthdate")
     Client toClientEntity(ClientDTO dto);
 
-    @Mapping(source = "client.birthdate", target = "birthdate")
     ClientDTO toClientDTO(Client client);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

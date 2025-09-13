@@ -16,17 +16,17 @@ public class Client {
     private String cpf;
     private Double income;
     @Column(columnDefinition = "DATE")
-    private LocalDate birthdate;
+    private LocalDate birthDate;
     private Integer children;
 
     public Client() {}
 
-    public Client(Long id, String name, String cpf, Double income, LocalDate birthdate, Integer children) {
+    public Client(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.income = income;
-        this.birthdate = birthdate;
+        this.birthDate = birthDate;
         this.children = children;
     }
 
@@ -62,12 +62,12 @@ public class Client {
         this.income = income;
     }
 
-    public LocalDate getBirthdate() {
-        return birthdate;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthDate(LocalDate birthdate) {
+        this.birthDate = birthdate;
     }
 
     public Integer getChildren() {

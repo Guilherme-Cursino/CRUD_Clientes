@@ -1,11 +1,10 @@
-INSERT INTO tb_client (name, cpf, income, birthdate, children)
-VALUES ('Ada', '402.080.180-00', 4754.20, DATE '2002-04-21', 2),
-       ('Alan', '187.388.290-45', 8370.20, DATE '2007-02-22', 1),
-       ('Grace', '970.910.070-00', 15225.50, DATE '2001-07-14', 0),
-       ('Charles', '015.582.650-66', 7288.20, DATE '2004-09-06', 3),
-       ('Tim', '163.032.120-69', 7126.30, DATE '2002-03-28', 0),
-       ('Linus', '335.711.370-86', 5402.00, DATE '2006-01-27', 1),
-       ('Steve', '894.956.850-01', 6864.40, DATE '2004-06-03', 1),
-       ('Bill', '744.197.990-05', 7824.70, DATE '2009-05-26', 4),
-       ('Mary', '131.723.210-02', 5233.80, DATE '2007-08-11', 3),
-       ('James', '912.423.280-76', 4781.10, DATE '2003-11-18', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Ada', '40208018000', 4754.20, '2002-04-21', 2);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Alan', '18738829045', 8370.20, '2007-02-22', 1);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Grace', '97091007000', 15225.50, '2001-07-14', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Charles', '01558265066', 7288.20, '2004-09-06', 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Tim', '16303212069', 7126.30, '2002-03-28', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Linus', '33571137086', 5402.00, '2006-01-27', 1);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Steve', '89495685001', 6864.40, '2004-06-03', 1);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Bill', '74419799005', 7824.70, '2009-05-26', 4);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Mary', '13172321002', 5233.80, '2007-08-11', 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('James', '91242328076', 4781.10, '2003-11-18', 0);
