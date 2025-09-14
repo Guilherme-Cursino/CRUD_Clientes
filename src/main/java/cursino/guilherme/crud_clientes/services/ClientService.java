@@ -6,7 +6,6 @@ import cursino.guilherme.crud_clientes.mapping.ClientMapper;
 import cursino.guilherme.crud_clientes.repositories.ClientRepository;
 import cursino.guilherme.crud_clientes.services.exceptions.DatabaseException;
 import cursino.guilherme.crud_clientes.services.exceptions.ResourceNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,7 +19,6 @@ public class ClientService {
     private final ClientRepository repository;
     private final ClientMapper mapper;
 
-    @Autowired
     public ClientService(ClientRepository repository, ClientMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
@@ -36,7 +34,7 @@ public class ClientService {
     @Transactional(readOnly = true)
     public Page<ClientDTO> findAll(Pageable pageable) {
         Page<Client> clients = repository.findAll(pageable);
-        return clients.map(x -> mapper.toClientDTO(x));
+        return clients.map(mapper::toClientDTO);
     }
 
     @Transactional

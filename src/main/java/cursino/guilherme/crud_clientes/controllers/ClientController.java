@@ -3,7 +3,6 @@ package cursino.guilherme.crud_clientes.controllers;
 import cursino.guilherme.crud_clientes.dto.ClientDTO;
 import cursino.guilherme.crud_clientes.services.ClientService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,6 @@ public class ClientController {
 
     private final ClientService service;
 
-    @Autowired
     public ClientController(ClientService service) {
         this.service = service;
     }

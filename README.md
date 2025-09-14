@@ -6,29 +6,29 @@ Este projeto é um desafio de back-end do treinamento Java Spring Professional d
 
 O projeto implementa as operações básicas de um CRUD:
 
-*   **Busca paginada de recursos:** `GET /clients`
-*   **Busca de recurso por ID:** `GET /clients/{id}`
-*   **Inserir novo recurso:** `POST /clients`
-*   **Atualizar recurso:** `PUT /clients/{id}`
-*   **Deletar recurso:** `DELETE /clients/{id}`
+* **Busca paginada de recursos:** `GET /clients`
+* **Busca de recurso por ID:** `GET /clients/{id}`
+* **Inserir novo recurso:** `POST /clients`
+* **Atualizar recurso:** `PUT /clients/{id}`
+* **Deletar recurso:** `DELETE /clients/{id}`
 
 ## Tecnologias Utilizadas
 
-*   **Spring Boot:** Framework para desenvolvimento de aplicações Java.
-*   **Maven:** Gerenciador de dependências.
-*   **Java:** Linguagem de programação.
-*   **H2 Database:** Banco de dados em memória para ambiente de testes.
+* **Spring Boot:** Framework para desenvolvimento de aplicações Java.
+* **Maven:** Gerenciador de dependências.
+* **Java:** Linguagem de programação.
+* **H2 Database:** Banco de dados em memória para ambiente de testes.
 
 ## Entidade `Client`
 
 A entidade `Client` possui os seguintes atributos:
 
-*   `id`: Long (Chave Primária)
-*   `name`: String
-*   `cpf`: String
-*   `income`: Double
-*   `birthDate`: LocalDate
-*   `children`: Integer
+* `id`: Long (Chave Primária)
+* `name`: String
+* `cpf`: String
+* `income`: Double
+* `birthDate`: LocalDate
+* `children`: Integer
 
 ## Seeding de Dados
 
@@ -38,10 +38,10 @@ O projeto realiza o *seed* de pelo menos 10 clientes com dados significativos pa
 
 O projeto trata as seguintes exceções:
 
-*   **ID não encontrado:** Retorna código 404 para operações de `GET por ID`, `PUT` e `DELETE` quando o cliente não existe.
-*   **Erro de validação:** Retorna código 422 com mensagens customizadas para cada campo inválido. As regras de validação são:
-    *   **Nome e CPF:** São campos obrigatórios.
-    *   **Data de nascimento:** É um campo obrigatório e não pode ser uma data futura.
+* **ID não encontrado:** Retorna código 404 para operações de `GET por ID`, `PUT` e `DELETE` quando o cliente não existe.
+* **Erro de validação:** Retorna código 422 com mensagens customizadas para cada campo inválido. As regras de validação são:
+* **Nome e CPF:** São campos obrigatórios.
+* **Data de nascimento:** É um campo obrigatório e não pode ser uma data futura.
 
 ## Testes Manuais com Postman
 
@@ -56,6 +56,7 @@ As seguintes requisições podem ser testadas utilizando o Postman (ou ferrament
 `GET /clients?page=0\&size=6\&sort=name`
 
 ### Inserção de novo cliente
+
 ```
 POST /clients
 Content-Type: application/json
@@ -67,7 +68,9 @@ Content-Type: application/json
 "children": 2
 }
 ```
+
 ### Atualização de cliente
+
 ```
 PUT /clients/1
 Content-Type: application/json
@@ -80,6 +83,7 @@ Content-Type: application/json
 "children": 2
 }
 ```
+
 ### Deleção de cliente
 
 `DELETE /clients/1`
